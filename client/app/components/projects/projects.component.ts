@@ -32,8 +32,8 @@ export class ProjectsComponent implements OnInit {
         this.router.navigate(['/projects', this.selectedProject._id]);
     }
 
-    addHero() {
+    addProject() {
         this.selectedProject = null;
-        this.router.navigate(['/detail', 'new']);
+        this.router.navigate(['/projects', 'new']);
     }
 }

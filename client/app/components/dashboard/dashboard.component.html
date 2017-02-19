@@ -1,8 +1,9 @@
-<h3>Top Heroes</h3>
+<h3>Projects</h3>
 <div class="row">
-    <div *ngFor="let hero of heroes" (click)="gotoDetail(hero)" class="col-md-3">
+    <div *ngFor="let project of projects" (click)="gotoDetail(project)" class="col-md-3">
         <div class="module hero">
-            <h4>{{hero.name}}</h4>
+            <h4>{{project.name}}</h4>
+            <h5>{{project.utilityTokenSymbol | uppercase}}</h5>
         </div>
     </div>
 </div>

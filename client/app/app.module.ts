@@ -14,6 +14,7 @@ import { ProjectTokensComponent } from './components/profile/project-tokens/proj
 import { UserSettingsComponent } from './components/profile/user-settings/user-settings.component';
 import { RegisterComponent } from './components/authentication/register/register.component';
 import { ProjectsComponent } from './components/projects/projects.component';
+import { ProjectDetailComponent } from './components/projectDetail/project-detail.component';
 
 import { AlertService, AuthenticationService, HeroService, ProjectService, UserService }  from './_services/index';
 import { LoggedInGuard } from './_guards/index';
@@ -31,6 +32,7 @@ import { LoggedInGuard } from './_guards/index';
     HeroesComponent,
     HeroDetailComponent,
     LoginComponent,
+    ProjectDetailComponent,
     ProjectsComponent,
     ProjectTokensComponent,
     UserSettingsComponent,

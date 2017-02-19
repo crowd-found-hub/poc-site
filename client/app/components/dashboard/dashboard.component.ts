@@ -1,12 +1,8 @@
-/**
- * Created by Moiz.Kachwala on 02-06-2016.
- */
-
 import {Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 
-import {Hero} from "../../_models/index";
-import {HeroService} from "../../_services/index";
+import {Project} from "../../_models/index";
+import {ProjectService} from "../../_services/index";
 
 @Component({
     selector: 'my-dashboard',
@@ -15,20 +11,20 @@ import {HeroService} from "../../_services/index";
 })
 
 export class DashboardComponent implements OnInit {
-    heroes: Hero[] = [];
+    projects: Project[] = [];
 
     constructor(
         private router: Router,
-        private heroService: HeroService) {
+        private projectService: ProjectService) {
     }
 
     ngOnInit() {
-        this.heroService.getHeroes()
-            .then(heroes => this.heroes = heroes);
+        this.projectService.getProjects()
+            .then(projects => this.projects = projects);
     }
 
-    gotoDetail(hero: Hero) {
-        let link = ['/heroes', hero._id];
+    gotoDetail(project: Project) {
+        let link = ['/projects', project._id];
         this.router.navigate(link);
     }
 }

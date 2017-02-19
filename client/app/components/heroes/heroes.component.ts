@@ -2,9 +2,10 @@
  * Created by Moiz.Kachwala on 02-06-2016.
  */
 import {Component, OnInit} from '@angular/core';
-import {HeroService} from "../../services/hero.service";
-import {Hero} from "../../models/hero";
 import { Router } from '@angular/router';
+
+import {HeroService} from "../../_services/index";
+import {Hero} from "../../_models/index";
 
 @Component({
     selector: 'my-heroes',
@@ -29,7 +30,7 @@ export class HeroesComponent implements OnInit {
     onSelect(hero: Hero) { this.selectedHero = hero; }
 
     gotoDetail() {
-        this.router.navigate(['/detail', this.selectedHero._id]);
+        this.router.navigate(['/heroes', this.selectedHero._id]);
     }
 
     addHero() {

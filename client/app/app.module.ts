@@ -6,11 +6,16 @@ import { HttpModule }     from '@angular/http';
 import { AppComponent }  from './app.component';
 import { routing }       from './app.routing';
 
-import { HeroesComponent }      from './components/heroes/heroes.component';
 import { DashboardComponent }   from './components/dashboard/dashboard.component';
+import { HeroesComponent }      from './components/heroes/heroes.component';
 import { HeroDetailComponent }  from './components/heroDetail/hero-detail.component';
+import { LoginComponent }       from './components/authentication/login/login.component';
+import { ProjectTokensComponent } from './components/profile/project-tokens/project-tokens.component';
+import { UserSettingsComponent } from './components/profile/user-settings/user-settings.component';
+import { RegisterComponent } from './components/authentication/register/register.component';
 
-import { HeroService }  from './services/hero.service';
+import { AlertService, AuthenticationService, HeroService, UserService }  from './_services/index';
+import { LoggedInGuard } from './_guards/index';
 
 @NgModule({
   imports: [
@@ -21,12 +26,20 @@ import { HeroService }  from './services/hero.service';
     ],
   declarations: [
     AppComponent,
-    HeroesComponent,
     DashboardComponent,
-    HeroDetailComponent
+    HeroesComponent,
+    HeroDetailComponent,
+    LoginComponent,
+    ProjectTokensComponent,
+    UserSettingsComponent,
+    RegisterComponent
   ],
   providers: [
-    HeroService
+    AlertService,
+    AuthenticationService,
+    HeroService,
+    UserService,
+    LoggedInGuard
   ],
   bootstrap: [AppComponent]
 })

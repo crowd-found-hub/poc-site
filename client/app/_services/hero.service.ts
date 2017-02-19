@@ -1,12 +1,9 @@
-/**
- * Created by Moiz.Kachwala on 02-06-2016.
- */
-
 import {Injectable} from '@angular/core';
-
 import { Headers, Http, Response } from '@angular/http';
+
 import 'rxjs/add/operator/toPromise';
-import {Hero} from "../models/hero";
+
+import {Hero} from "../_models/index";
 
 @Injectable()
 export class HeroService {

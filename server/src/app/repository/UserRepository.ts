@@ -15,7 +15,6 @@ class UserRepository  extends RepositoryBase<IUserModel> {
     }
 
     retrieveByUsernameAndPassword (username: string, password: string, callback: (error: any, result: any) => void) {
-        console.log('UserRepository.retrieveByUsernameAndPassword', username, password);
         this._userSchema.find({'username': username, 'password': password}, callback)
     }
 }

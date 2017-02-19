@@ -15,8 +15,10 @@ import { UserSettingsComponent } from './components/profile/user-settings/user-s
 import { RegisterComponent } from './components/authentication/register/register.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { ProjectDetailComponent } from './components/projectDetail/project-detail.component';
+import { LoginNavComponent } from './components/_common/login-nav/login-nav.component';
+import { AlertComponent } from './components/_common/alert/alert.component';
 
-import { AlertService, AuthenticationService, HeroService, ProjectService, UserService }  from './_services/index';
+import { AlertService, AuthenticationService, EventBrokerService, HeroService, ProjectService, UserService }  from './_services/index';
 import { LoggedInGuard } from './_guards/index';
 
 @NgModule({
@@ -27,6 +29,7 @@ import { LoggedInGuard } from './_guards/index';
     routing
     ],
   declarations: [
+    AlertComponent,
     AppComponent,
     DashboardComponent,
     HeroesComponent,
@@ -36,9 +39,11 @@ import { LoggedInGuard } from './_guards/index';
     ProjectsComponent,
     ProjectTokensComponent,
     UserSettingsComponent,
-    RegisterComponent
+    RegisterComponent,
+    LoginNavComponent
   ],
   providers: [
+    EventBrokerService,
     AlertService,
     AuthenticationService,
     HeroService,
@@ -46,6 +51,8 @@ import { LoggedInGuard } from './_guards/index';
     UserService,
     LoggedInGuard
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }

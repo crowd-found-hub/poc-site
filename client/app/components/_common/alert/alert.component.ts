@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
-import { AlertService } from '../../_services/index';
+import { AlertService } from '../../../_services/index';
 
 @Component({
     selector: 'alert',
-    templateUrl: 'alert.component.html'
+    templateUrl: './app/components/_common/alert/alert.component.html'
 })
 export class AlertComponent {
     message: any;

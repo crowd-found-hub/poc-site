@@ -25,9 +25,10 @@ export class AuthenticationService {
         if (res[1]) {
           localStorage.setItem('auth_token', res[1].auth_token);
           this.loggedIn = true;
+          return true;
         }
         console.log('AuthenticationService loggedIn', this.loggedIn);
-        return res.success;
+        return false;
       });
   }
 

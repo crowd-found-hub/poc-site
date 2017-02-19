@@ -13,8 +13,9 @@ import { LoginComponent }       from './components/authentication/login/login.co
 import { ProjectTokensComponent } from './components/profile/project-tokens/project-tokens.component';
 import { UserSettingsComponent } from './components/profile/user-settings/user-settings.component';
 import { RegisterComponent } from './components/authentication/register/register.component';
+import { ProjectsComponent } from './components/projects/projects.component';
 
-import { AlertService, AuthenticationService, HeroService, UserService }  from './_services/index';
+import { AlertService, AuthenticationService, HeroService, ProjectService, UserService }  from './_services/index';
 import { LoggedInGuard } from './_guards/index';
 
 @NgModule({
@@ -30,6 +31,7 @@ import { LoggedInGuard } from './_guards/index';
     HeroesComponent,
     HeroDetailComponent,
     LoginComponent,
+    ProjectsComponent,
     ProjectTokensComponent,
     UserSettingsComponent,
     RegisterComponent
@@ -38,6 +40,7 @@ import { LoggedInGuard } from './_guards/index';
     AlertService,
     AuthenticationService,
     HeroService,
+    ProjectService,
     UserService,
     LoggedInGuard
   ],

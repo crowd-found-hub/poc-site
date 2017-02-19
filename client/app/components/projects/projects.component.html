@@ -1,0 +1,38 @@
+<h1>{{title}}</h1>
+<h2>Hub Projects</h2>
+<div class="row">
+    <div class="col-md-12">
+        <div class="error" *ngIf="error">{{error}}</div>
+        <div class="pull-right">
+            <button class="btn btn-success" (click)="addProject()">Add New Project</button>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Symbol</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let project of projects" [class.active]="project === selectedProject" (click)="onSelect(project)">
+                    <td>{{project.name}}</td>
+                    <td>{{project.utilityTokenSymbol}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div *ngIf="selectedProject">
+            <h2>
+                {{selectedProject.name | uppercase}}
+            </h2>
+            <button class="btn btn-primary" (click)="gotoDetail()">View Details</button>
+        </div>
+    </div>
+</div>

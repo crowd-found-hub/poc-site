@@ -7,6 +7,7 @@ import { LoginComponent }       from './components/authentication/login/login.co
 import { ProjectTokensComponent } from './components/profile/project-tokens/project-tokens.component';
 import { UserSettingsComponent } from './components/profile/user-settings/user-settings.component';
 import { RegisterComponent } from './components/authentication/register/register.component';
+import { ProjectsComponent } from './components/projects/projects.component';
 
 import { LoggedInGuard } from './_guards/index';
 
@@ -35,6 +36,10 @@ const appRoutes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
+  },
+  {
+    path: 'projects',
+    component: ProjectsComponent
   },
   {
     path: 'profile/project-tokens',

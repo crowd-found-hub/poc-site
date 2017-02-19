@@ -85,13 +85,14 @@ class UserController implements IBaseController <UserBusiness> {
     }
     login(req: express.Request, res: express.Response): void {
         try {
-            var username: string = req.params.username;
-            var password: string = req.params.password;
-            console.log('UserController.login - username/password', username, password);
+            var username: string = req.body.username;
+            var password: string = req.body.password;
             var userBusiness = new UserBusiness();
             userBusiness.findByUsernameAndPassword(username, password, (error, result) => {
                 if(error) res.send({"error": "error"});
-                else res.send(result);
+                else {
+                    res.send(result);
+                }
             });
         }
         catch (e)  {

@@ -39,7 +39,15 @@ class UserBusiness implements IUserBusiness {
     }
 
     findByUsernameAndPassword (username: string, password: string, callback: (error: any, result: IUserModel) => void) {
-        this._userRepository.retrieveByUsernameAndPassword(username, password, callback);
+        this._userRepository.retrieveByUsernameAndPassword(username, password, (err, res) => {
+            if (err) callback(err, res);
+            else {
+                console.log('UserBusiness.findByUsernameAndPassword res', res);
+                res[0].password = undefined;
+                res.push({auth_token: 'fake jwt auth token'})
+                callback(err, res);
+            }
+        });
     }
 
 }

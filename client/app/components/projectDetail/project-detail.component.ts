@@ -1,7 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Project} from "../../_models/index";
+import { Component, Input, OnInit } from '@angular/core';
+import { Project } from "../../_models/index";
 import { ActivatedRoute, Params } from '@angular/router';
-import {ProjectService} from "../../_services/index";
+import { ProjectService } from "../../_services/index";
 
 @Component({
     selector: 'project-detail',
@@ -13,7 +13,7 @@ export class ProjectDetailComponent implements OnInit {
     newProject = false;
     error: any;
     navigated = false; // true if navigated here
-
+    editMode: boolean = false;
 
     constructor(
         private projectService: ProjectService,
@@ -39,12 +39,23 @@ export class ProjectDetailComponent implements OnInit {
             .save(this.project)
             .then(project => {
                 this.project = project; // saved project, w/ id if new
-                this.goBack();
+                this.cancel();
             })
             .catch(error => this.error = error); // TODO: Display error message
     }
 
-    goBack() {
-        window.history.back();
+    cancel() {
+        // reload from the db (change with copy in memory when first loaded);
+        if (this.newProject) {
+            this.project = new Project();
+        } else {
+            this.projectService.getProject(this.project._id)
+                .then(project => this.project = project);
+        }
+        this.toggleEditMode();
+    }
+
+    toggleEditMode() {
+        this.editMode = !this.editMode;
     }
 }

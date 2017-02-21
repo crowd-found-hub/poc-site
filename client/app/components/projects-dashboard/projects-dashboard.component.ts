@@ -6,11 +6,11 @@ import {ProjectService} from "../../_services/index";
 
 @Component({
     selector: 'my-dashboard',
-    templateUrl: './app/components/dashboard/dashboard.component.html',
-    styleUrls: ['./app/components/dashboard/dashboard.component.css']
+    templateUrl: './app/components/projects-dashboard/projects-dashboard.component.html',
+    styleUrls: ['./app/components/projects-dashboard/projects-dashboard.component.css']
 })
 
-export class DashboardComponent implements OnInit {
+export class ProjectsDashboardComponent implements OnInit {
     projects: Project[] = [];
 
     constructor(

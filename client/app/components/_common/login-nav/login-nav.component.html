@@ -10,8 +10,7 @@
 	</div>
 	<div class="collapse navbar-collapse navbar-menu-collapse">
 		<ul class="nav navbar-nav navbar-right">
-			<li class="active"><a routerLink="/dashboard" routerLinkActive="active">Dashboard</a></li>
-			<li class="active"><a routerLink="/projects" routerLinkActive="active">Projects</a></li>
+			<li class="active"><a routerLink="/projects-dashboard" routerLinkActive="active">Projects</a></li>
 			<li *ngIf="!isLoggedIn" class="active"><a routerLink="/login" routerLinkActive="active">Login</a></li>
 			<li *ngIf="isLoggedIn" class="active"><a (click)="logout()" style="cursor: pointer">Logout</a></li>
 		</ul>

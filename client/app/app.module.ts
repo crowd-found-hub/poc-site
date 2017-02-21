@@ -19,7 +19,7 @@ import { LoginNavComponent } from './components/_common/login-nav/login-nav.comp
 import { AlertComponent } from './components/_common/alert/alert.component';
 import { FeaturesDashboardComponent } from './components/features-dashboard/features-dashboard.component';
 
-import { AlertService, AuthenticationService, EventBrokerService, HeroService, ProjectService, UserService }  from './_services/index';
+import { AlertService, AuthenticationService, EventBrokerService, FeatureService, HeroService, ProjectService, UserService }  from './_services/index';
 import { LoggedInGuard } from './_guards/index';
 
 @NgModule({
@@ -45,9 +45,10 @@ import { LoggedInGuard } from './_guards/index';
     LoginNavComponent
   ],
   providers: [
-    EventBrokerService,
     AlertService,
     AuthenticationService,
+    EventBrokerService,
+    FeatureService,
     HeroService,
     ProjectService,
     UserService,

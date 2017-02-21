@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Project } from "../../_models/index";
 import { ActivatedRoute, Params } from '@angular/router';
-import { ProjectService } from "../../_services/index";
+
+import { Project, Feature } from "../../_models/index";
+import { ProjectService, FeatureService } from "../../_services/index";
 
 @Component({
     selector: 'project-detail',
@@ -14,11 +15,13 @@ export class ProjectDetailComponent implements OnInit {
     error: any;
     navigated = false; // true if navigated here
     editMode: boolean = false;
+    features: Feature[] = [];
 
     constructor(
         private projectService: ProjectService,
-        private route: ActivatedRoute) {
-    }
+        private route: ActivatedRoute,
+        private featureService: FeatureService
+    ) { }
 
     ngOnInit() {
         this.route.params.forEach((params: Params) => {
@@ -30,6 +33,11 @@ export class ProjectDetailComponent implements OnInit {
                 this.newProject = false;
                 this.projectService.getProject(id)
                     .then(project => this.project = project);
+                this.featureService.getFeaturesByProjectId(id)
+                    .subscribe(
+                    features => this.features = features,
+                    error => this.error = <any>error
+                    );
             }
         });
     }

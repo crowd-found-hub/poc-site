@@ -9,6 +9,7 @@ import { UserSettingsComponent } from './components/profile/user-settings/user-s
 import { RegisterComponent } from './components/authentication/register/register.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { ProjectDetailComponent } from './components/project-detail/project-detail.component';
+import { FeatureDetailComponent } from './components/feature-detail/feature-detail.component';
 
 import { LoggedInGuard } from './_guards/index';
 
@@ -45,6 +46,10 @@ const appRoutes: Routes = [
   {
     path: 'projects',
     component: ProjectsComponent
+  },
+  {
+    path: 'features/:id',
+    component: FeatureDetailComponent
   },
   {
     path: 'profile/project-tokens',

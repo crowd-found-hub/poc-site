@@ -18,6 +18,7 @@ import { ProjectDetailComponent } from './components/project-detail/project-deta
 import { LoginNavComponent } from './components/_common/login-nav/login-nav.component';
 import { AlertComponent } from './components/_common/alert/alert.component';
 import { FeaturesDashboardComponent } from './components/features-dashboard/features-dashboard.component';
+import { FeatureDetailComponent } from './components/feature-detail/feature-detail.component';
 
 import { AlertService, AuthenticationService, EventBrokerService, FeatureService, HeroService, ProjectService, UserService }  from './_services/index';
 import { LoggedInGuard } from './_guards/index';
@@ -33,6 +34,7 @@ import { LoggedInGuard } from './_guards/index';
     AlertComponent,
     AppComponent,
     FeaturesDashboardComponent,
+    FeatureDetailComponent,
     HeroesComponent,
     HeroDetailComponent,
     LoginComponent,
